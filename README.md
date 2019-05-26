@@ -20,7 +20,6 @@ docker compose: https://docs.docker.com/compose/install/
 
 Развертка проекта: в корне проекта выполнить следующие команды
 
-
 # сборка проекта
 > make docker-build
 # стартуем контейнеры
