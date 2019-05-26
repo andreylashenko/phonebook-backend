@@ -1,0 +1,44 @@
+# Версия docker-compose
+version: '2'
+# Список наших сервисов (контейнеров)
+services:
+  nginx:
+    # используем последний стабильный образ nginx
+    image: nginx:latest
+    # маршрутизируем порты
+    ports:
+      - "80:80"
+      - "443:443"
+    # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
+    volumes:
+      - ./framework/docker/conf:/etc/nginx/conf.d
+      - ./:/var/www
+      - ./logs:/var/log/nginx
+    # nginx должен общаться с php контейнером
+    links:
+      - php
+  php:
+    # у нас свой образ для PHP, указываем путь к нему и говорим что его надо собрать
+    build: framework/docker/images/php
+    # этот образ будет общаться с mysql
+    links:
+      - mysql
+    # монтируем директорию с проектами
+    volumes:
+      - ./:/var/www
+  mysql:
+    image: mysql:8
+    container_name: mysql-container
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    # задаем пароль для root пользователя
+    environment:
+      MYSQL_DATABASE: 'phonebook'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'root'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'root'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'root'
