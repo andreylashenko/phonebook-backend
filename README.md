@@ -8,9 +8,11 @@ docker: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 docker compose: https://docs.docker.com/compose/install/
 
-Перед разверткой проекта остновите следующие сервисы
+
 
 ``` bash
+Перед разверткой проекта остновите следующие сервисы
+
 # остновка nginx
 > sudo service nginx stop
 # остановка mysql
@@ -18,7 +20,7 @@ docker compose: https://docs.docker.com/compose/install/
 
 Развертка проекта: в корне проекта выполнить следующие команды
 
-``` bash
+
 # сборка проекта
 > make docker-build
 # стартуем контейнеры
