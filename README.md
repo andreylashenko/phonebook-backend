@@ -26,3 +26,4 @@ docker compose: https://docs.docker.com/compose/install/
 # загрузка дампа базы данных
 > make docker-dump
 ```
+Проект будет доступен: http://framework
