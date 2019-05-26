@@ -21,6 +21,8 @@ docker compose: https://docs.docker.com/compose/install/
 ``` bash
 # сборка проекта
 > make docker-build
+# стартуем контейнеры
+> make docker-up
 # загрузка дампа базы данных
 > make docker-dump
 ```
