@@ -1,1 +1,18 @@
-# phonebook-backend
+# Телефонный справочник
+
+Тестовое задание компании ProfitClick. Backend часть.
+
+Перед разверткой проекта убедитесь, что у вас установлен docker
+
+docker: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+docker compose: https://docs.docker.com/compose/install/
+
+Развертка проекта: в корне проекта выполнить следующие команды
+
+``` bash
+# сборка проекта
+> make docker-build
+# загрузка дампа базы данных
+> make docker-dump
+```
