@@ -1,7 +1,5 @@
 # Телефонный справочник
 
-Тестовое задание компании ProfitClick. Backend часть.
-
 Перед разверткой проекта убедитесь, что у вас установлен docker
 
 docker: https://docs.docker.com/install/linux/docker-ce/ubuntu/
